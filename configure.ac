@@ -43,12 +43,12 @@ if test x"${PKGCONFIG}" == x"yes"; then
         hiredis_cxxflags=`pkg-config --cflags hiredis`
         hiredis_libs=`pkg-config --libs hiredis`
     else
-        hiredis_cxxflags=""
+        hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/local/hiredis"
         hiredis_libs="-lhiredis"
     fi
 else
     ## Add a reasonable default of -lhiredis if we don't have pkg-config
-    hiredis_cxxflags=""
+    hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/include/hiredis"
     hiredis_libs="-lhiredis"
 fi
 

@@ -2930,7 +2930,7 @@ if test x"${PKGCONFIG}" == x"yes"; then
     fi
 else
     ## Add a reasonable default of -lhiredis if we don't have pkg-config
-    hiredis_cxxflags=""
+    hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/include/hiredis"
     hiredis_libs="-lhiredis"
 fi
 
@@ -3208,10 +3208,8 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
 else
 
 		# If it didn't work, try adding /usr/local directly then trying again
-		{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Hiredis headers not found with via default CXXFLAGS and CPPFLAGS" >&5
-$as_echo "$as_me: WARNING: Hiredis headers not found with via default CXXFLAGS and CPPFLAGS" >&2;}
-                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: manually trying /usr/local/include" >&5
-$as_echo "$as_me: WARNING: manually trying /usr/local/include" >&2;}
+		{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Hiredis headers not found with via default CXXFLAGS and CPPFLAGS, trying /usr/local/include" >&5
+$as_echo "$as_me: WARNING: Hiredis headers not found with via default CXXFLAGS and CPPFLAGS, trying /usr/local/include" >&2;}
 		CPPFLAGS="${hiredis_cxxflags} ${CPPFLAGS} -I/usr/local/include"
 		CXXFLAGS="${hiredis_cxxflags} ${CXXFLAGS} -I/usr/local/include -L/usr/local/lib"
 		# unset the cache variable for this particular header check
@@ -3233,6 +3231,7 @@ fi
 
 
 
+## could check for minimal suitable version here
 
 ## now use all these
 PKG_CXXFLAGS="${PKG_CXXFLAGS} $hiredis_cxxflags"

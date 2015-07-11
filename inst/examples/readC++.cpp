@@ -1,6 +1,6 @@
 // -*- compile-command: "g++ -o readC++ readC++.cpp -lhiredis"; -*-*
 
-#include <hiredis/hiredis.h>        // we check in configure for this
+#include <hiredis.h>        // we check in configure for this
 #include <iostream>
 #include <cstdlib>
 

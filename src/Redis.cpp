@@ -39,7 +39,7 @@
 
 
 #include <Rcpp.h>
-#include <hiredis/hiredis.h>        // we check in configure for this
+#include <hiredis.h>        // we check in configure for this
 
 #include <RApiSerializeAPI.h>   	// provides C API with serialization for R
 
