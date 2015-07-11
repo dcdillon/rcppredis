@@ -14,12 +14,6 @@ met. The `pkg-config` script is used to find the hiredis headers and
 library. All of Rcpp, RApiSerialized and RcppRedis can be installed directly
 from CRAN (which is the recommended approach) or GitHub.
 
-On OS X, the header file `hiredis.h` has been seen to be installed directly
-in `/usr/local/include` whereas we generally assume a location within a
-`hiredis` directory, eg `/usr/local/include/hiredis/hiredis.h`. This
-[gist](https://gist.github.com/romainfrancois/e70e6c49fdda9172b644) shows a
-successfull OS X installation via homebrew.
-
 ### Getting Started
 
 Run some of the scripts from the `demo/` directory.
