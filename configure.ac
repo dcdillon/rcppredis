@@ -40,10 +40,10 @@ if test x"${PKGCONFIG}" == x"yes"; then
     ## check via pkg-config for hiredis
     if pkg-config --exists hiredis; then
         ## obtain cflags and obtain libs
-        hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/local/hiredis"
+        hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/include/hiredis"
         hiredis_libs=`pkg-config --libs hiredis`
     else
-        hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/local/hiredis"
+        hiredis_cxxflags="-I/usr/local/include/hiredis -I/usr/include/hiredis"
         hiredis_libs="-lhiredis"
     fi
 else
